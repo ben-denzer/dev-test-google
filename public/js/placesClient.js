@@ -49,7 +49,7 @@
       getId('modal-address').innerHTML = '';
       getId('modal-phone').innerHTML = '';
       getId('modal-website').innerHTML = '';
-      
+
       getDetails(e.target.dataset.apiId, (err, data) => {
         if (err) {
           makeDetailsView('error getting details');
@@ -112,7 +112,6 @@
   // in the 'allow location access' prompt, then no event is fired
   let timer = setTimeout(() => {
     getId('bigLoaderWarning').innerHTML = 'You\'ll need to choose to either Allow or Deny access to your location data. Pressing "Not Now" or not doing anything causes the page to idle forever';
-  }, 20000); 
-
+  }, 15000); 
 
 })();
