@@ -87,7 +87,7 @@
     }
   }
 
-  Get Details
+  //Get Details
   let getDetails = (id, detailsCallback) => {
     var request = new XMLHttpRequest();
     request.open('POST', '/getDetails', true);
