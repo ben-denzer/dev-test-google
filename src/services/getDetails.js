@@ -16,7 +16,6 @@ let getDetails = (id, moduleCallback) => {
     
     response.on('end', () => {
       if (str) {
-        console.log(JSON.parse(str));
         moduleCallback(null, str);
       }
       else {
