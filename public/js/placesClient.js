@@ -43,43 +43,12 @@
   let detailsCache = [];
   let detailBoxes = document.getElementsByClassName('details');
 
-  // getId('main').addEventListener('click', e => {
-
-  //   // Make sure they are clicking a picture, and make sure its the first time
-  //   if (e.target.id) {
-
-  //     for (let i in detailBoxes) {
-  //       if (detailBoxes.hasOwnProperty(i)) {
-  //         if (detailBoxes[i].dataset.details_id !== e.target.dataset.pic_id) {
-  //           detailBoxes[i].style.display = 'none';
-  //         }
-  //         else {
-  //           ((i) => {
-  //             detailBoxes[i].style.display = 'block';
-
-  //             if (detailsCache.indexOf(e.target.id) === -1) {
-  //               detailBoxes[i].innerHTML = '<div id="sm-loader" class="centered"><img src="loading_32x32.gif" alt="loading"></div>';
-
-  //               detailsCache.push(e.target.id);
-
-  //               getDetails(e.target.dataset.img_api_id, (err, details) => {
-  //                 if(err) {
-  //                   return detailBoxes[i].innerHTML = 'Error getting data';
-  //                 }
-
-  //                 makeDetailsView(details, (err, data) => {
-  //                   let loader = getId('sm-loader');
-  //                   loader.parentNode.removeChild(loader);
-  //                   detailBoxes[i].appendChild(data);
-  //                 });
-  //               });
-  //             }
-  //           })(i);
-  //         }
-  //       }
-  //     }
-  //   }
-  // });
+  getId('mainContent').addEventListener('click', (e) => {
+    if (e.target.id.slice(0,3) === 'link') {
+      console.log(e.target.id);
+      e.stopPropagation();
+    }
+  });
 
   // Called by 'click' listener
   let makeDetailsView = (details, callback) => {
