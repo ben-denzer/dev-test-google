@@ -12,7 +12,7 @@
         let data = JSON.parse(request.responseText);
         if (!data) {
           loadPage('error inside loadPictures()');
-        } 
+        }
         loadPage(null, data);
       }
       else {
@@ -30,10 +30,9 @@
   // GeoLocation callbacks - Call Api For Pictures
   let geoError = () => {
     loadPictures(19.896766, -155.582782);
-    let warning = document.createElement('div');
-    warning.className = 'warning centered';
-    warning.innerHTML = 'We couldn\'t determine your location, so here are some pictures from Hawaii.';
-    getId('heading').appendChild(warning);
+    // let warning = document.createElement('div');
+    // warning.innerHTML = 'We couldn\'t determine your location, so here are some pictures from Hawaii.';
+    // getId('heading').appendChild(warning);
   } 
   let geoSuccess = (position) => {
     loadPictures(position.coords.latitude, position.coords.longitude);
