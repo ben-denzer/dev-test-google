@@ -29,7 +29,7 @@
 
   // GeoLocation callbacks - Call Api For Pictures
   let geoError = () => {
-    loadPictures(19.896766, -155.582782);
+    loadPictures(33.8670522, 151.1957362);
     // let warning = document.createElement('div');
     // warning.innerHTML = 'We couldn\'t determine your location, so here are some pictures from Hawaii.';
     // getId('heading').appendChild(warning);
