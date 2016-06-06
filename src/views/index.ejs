@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="google-site-verification" content="I5EuJ65fz5rmHhVSVdUyshKD2DTIpHiweB6vg76svhI" />
 
-  <title>Round About - Start Bootstrap Template</title>
+  <title>Ben Denzer - Dev Test</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="bootstrap.min.css" rel="stylesheet">
@@ -22,38 +22,45 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Google Places Near You</a>
+        <a class="navbar-brand" href="#">Google Places Near You - Ben Denzer</a>
       </div>
     </div>
   </nav>
 
   <div class="container" id="main">
-    <div class="row">
-      
-      <div class="col-lg-12">
-          <h1 class="page-header">Google Places</h1>
-          <p>Here are some places near you.</p>
-      </div>
-    </div>
-
-    <!-- Team Members Row -->
     <div class="row" id="mainContent">
       <div class="col-xs-12" id="bigLoaderContainer"></div>
+
       <% for (var i = 1; i <= 9; i++) { %>
         <div class="col-xs-4 text-center">
-          <img class="img-circle img-responsive img-center" id="img-<%=i%>" src="" alt="">
-          <h3 id="heading-<%=i%>"></h3>
+          <a data-toggle="modal" data-target=".myModal">  
+            <div>
+              <img class="img-circle img-responsive img-center" id="img-<%=i%>" src="" alt="">
+              <h3 id="heading-<%=i%>"></h3>
+            </div>
+          </a>
         </div>
-      <% } %>     
+      <% } %>
 
-            <!-- <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div> -->
     </div>
+
+    <div class="modal fade myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <p>One fine body&hellip;</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
   </div>
   <script src="js/placesClient.js"></script>
