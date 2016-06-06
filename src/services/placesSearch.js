@@ -15,14 +15,14 @@ let getPics = (lat, lon, moduleCallback) => {
     });
     
     response.on('end', () => {
-      //let data = JSON.parse(str);
-      //if (data) {
+      let data = JSON.parse(str);
+      if (data) {
         console.log(str);
         //moduleCallback(null, data);
-      // }
-      // else {
-      //   moduleCallback('There was an error retrieving the photos')
-      // }
+      }
+      else {
+        moduleCallback('There was an error retrieving the photos')
+      }
     });
   };
 
