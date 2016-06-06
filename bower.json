@@ -1,0 +1,20 @@
+{
+  "name": "gplaces",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ben Denzer <denzer.ben@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "startbootstrap-round-about": "https://github.com/BlackrockDigital/startbootstrap-round-about.git#4ea48a344d357a9b50c0c67977fb6186b766c234"
+  }
+}
