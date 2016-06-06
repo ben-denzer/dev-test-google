@@ -13,6 +13,7 @@
         if (!data) {
           loadPage('error inside loadPictures()');
         }
+        console.log(data);
         loadPage(null, data);
       }
       else {
