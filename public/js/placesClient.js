@@ -13,7 +13,7 @@
         if (!data) {
           loadPage('error inside loadPictures()');
         }
-        if (data.status === 'ZERO RESULTS') {
+        if (data.status === 'ZERO RESULTS' || data.results.length === 0) {
           loadPage('Google says there are zero results for this location');
         }
         loadPage(null, data);
