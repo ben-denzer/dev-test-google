@@ -26,7 +26,7 @@ let getDetails = (id, moduleCallback) => {
   };
 
   let options = {
-    host: 'maps.googleapis.com'
+    host: 'maps.googleapis.com',
     path: '/maps/api/place/details/json?placeid=' + id + '&key=' + placesKey.key
   };
   
