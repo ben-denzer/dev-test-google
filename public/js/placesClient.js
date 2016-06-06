@@ -10,17 +10,14 @@
     request.onload = function() {
       if (request.status >= 200 && request.status < 400) {
         let data = JSON.parse(request.responseText);
-        if (data.meta.error_message) {
-          
-          // CHANGE THIS
-
-          //console.log(data.meta.error_message);
-          //loadPage('My OAuth token expired');
+        if (!data) {
+          loadPage('error inside loadPictures()');
         } 
         loadPage(null, data);
       }
       else {
-        loadPage('There was an error fetching the pictures');
+        console.log(data);
+        //loadPage('There was an error fetching the pictures');
       }
     };
 
@@ -40,7 +37,6 @@
     getId('heading').appendChild(warning);
   } 
   let geoSuccess = (position) => {
-    console.log('success');
     loadPictures(position.coords.latitude, position.coords.longitude);
   }
 
