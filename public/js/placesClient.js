@@ -13,11 +13,11 @@
         if (!data) {
           loadPage('error inside loadPictures()');
         } 
-        loadPage(null, data);
+        console.log(data);
+        //loadPage(null, data);
       }
       else {
-        console.log(data);
-        //loadPage('There was an error fetching the pictures');
+        loadPage('There was an error fetching the pictures');
       }
     };
 
