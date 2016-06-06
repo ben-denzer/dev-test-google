@@ -44,10 +44,7 @@
   let detailBoxes = document.getElementsByClassName('details');
 
   getId('mainContent').addEventListener('click', (e) => {
-    if (e.target.id.slice(0,3) === 'link') {
       console.log(e.target.id);
-      e.stopPropagation();
-    }
   });
 
   // Called by 'click' listener
