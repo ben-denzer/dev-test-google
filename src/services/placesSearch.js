@@ -28,7 +28,7 @@ let getPics = (lat, lon, moduleCallback) => {
 
   let options = {
     host: 'maps.googleapis.com',
-    path: '/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&radius=500&key=' + placesKey.key
+    path: '/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&radius=500&type=park&key=' + placesKey.key
   };
   https.request(options, apiCallback).end();
 }
