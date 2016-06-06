@@ -13,8 +13,7 @@
         if (!data) {
           loadPage('error inside loadPictures()');
         } 
-        console.log(data);
-        //loadPage(null, data);
+        loadPage(null, data);
       }
       else {
         loadPage('There was an error fetching the pictures');
@@ -105,18 +104,19 @@
   }
 
   //Show Picures
-  // let loadPage = (err, data) => {
-  //   getId('bigLoaderContainer').style.display = 'none';
+  let loadPage = (err, data) => {
+    getId('bigLoaderContainer').style.display = 'none';
     
-  //   clearTimeout(timer);
-  //   if (err) {
-  //     getId('main').innerHTML = err;
-  //   }
-  //   for (let i = 0; i < 18; i++) {
-  //     getId('img-' + i).src = data.data[i].images.low_resolution.url;
-  //     getId('img-' + i).dataset.img_api_id = data.data[i].id;
-  //   }
-  // }
+    clearTimeout(timer);
+    if (err) {
+      getId('main').innerHTML = err;
+    }
+    for (let i = 1; i <= 9; i++) {
+      getId('img-' + i).src = data.results[i].icon;
+      getId('img-' + i).dataset.img_api_id = data.results[i].place_id;
+      getId('heading' + i).innerHTML = data.results[i].name;
+    }
+  }
 
   //Get Details
   // let getDetails = (id, detailsCallback) => {

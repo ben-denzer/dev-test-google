@@ -16,7 +16,7 @@ let router = () => {
         return console.log('Error', err);
       }
 
-      res.status(200).send(data);
+      res.status(200).render('index');
     });
   });
 
