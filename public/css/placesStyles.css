@@ -1,2 +1,8 @@
 img {
-  cursor: pointer; }
+  cursor: pointer; 
+}
+
+.header .bigLoaderContainer {
+  width: 100%;
+  text-align: center;
+}

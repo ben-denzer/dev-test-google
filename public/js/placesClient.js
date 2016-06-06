@@ -23,7 +23,7 @@
     request.onerror = function() {
       getId('main').innerHTML = "Error"
     };
-
+    console.log(lat, lon);
     request.send(JSON.stringify({"lat": lat, "lon": lon}));
   }
 
