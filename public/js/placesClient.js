@@ -44,7 +44,7 @@
   let detailBoxes = document.getElementsByClassName('details');
 
   getId('mainContent').addEventListener('click', (e) => {
-      console.log(e.target.id);
+      console.log(e.target.dataset.api_id);
   });
 
   // Called by 'click' listener
@@ -79,7 +79,7 @@
     }
     for (let i = 1; i <= 9; i++) {
       getId('img-' + i).src = data.results[i].icon;
-      getId('img-' + i).dataset.img_api_id = data.results[i].place_id;
+      getId('link-' + i).dataset.api_id = data.results[i].place_id;
       getId('heading-' + i).innerHTML = data.results[i].name;
     }
   }
