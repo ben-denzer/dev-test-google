@@ -46,6 +46,7 @@
   getId('mainContent').addEventListener('click', (e) => {
     if (e.target.dataset.apiId) {
       console.log(e.target.dataset.apiId);
+      getDetails(e.target.dataset.apiId);
     }
   });
 
@@ -86,29 +87,29 @@
     }
   }
 
-  //Get Details
-  // let getDetails = (id, detailsCallback) => {
-  //   var request = new XMLHttpRequest();
-  //   request.open('POST', '/getDetails', true);
-  //   request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  Get Details
+  let getDetails = (id, detailsCallback) => {
+    var request = new XMLHttpRequest();
+    request.open('POST', '/getDetails', true);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-  //   request.onload = function() {
-  //     if (request.status >= 200 && request.status < 400) {
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
 
-  //       let data = JSON.parse(request.responseText);
-  //       detailsCallback(null, data);
-  //     }
-  //     else {
-  //       detailsCallback('Error getting details');
-  //     }
-  //   };
+        let data = JSON.parse(request.responseText);
+        detailsCallback(null, data);
+      }
+      else {
+        detailsCallback('Error getting details');
+      }
+    };
 
-  //   request.onerror = function() {
-  //     getId('main').innerHTML = "Error"
-  //   };
+    request.onerror = function() {
+      getId('main').innerHTML = "Error"
+    };
 
-  //   request.send(JSON.stringify({"id": id}));
-  // };
+    request.send(JSON.stringify({"id": id}));
+  };
 
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
 
