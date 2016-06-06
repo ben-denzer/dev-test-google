@@ -1,5 +1,5 @@
 let https = require('https');
-let placesKey = require('../../placesKey');
+let placesKey = require('../../.placesKey');
 
 let getPics = (lat, lon, moduleCallback) => {
 
