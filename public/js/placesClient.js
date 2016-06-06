@@ -13,7 +13,9 @@
         if (!data) {
           loadPage('error inside loadPictures()');
         }
-        console.log(data);
+        if (data.status === 'ZERO RESULTS') {
+          loadPage('Google says there are zero results for this location');
+        }
         loadPage(null, data);
       }
       else {
@@ -30,10 +32,7 @@
 
   // GeoLocation callbacks - Call Api For Pictures
   let geoError = () => {
-    loadPictures(40.7831, 73.9712);
-    // let warning = document.createElement('div');
-    // warning.innerHTML = 'We couldn\'t determine your location, so here are some pictures from Hawaii.';
-    // getId('heading').appendChild(warning);
+    loadPage('We couldn\'t determine your location');
   } 
   let geoSuccess = (position) => {
     loadPictures(position.coords.latitude, position.coords.longitude);
