@@ -45,31 +45,26 @@
 
   getId('mainContent').addEventListener('click', (e) => {
     if (e.target.dataset.apiId) {
-      console.log(e.target.dataset.apiId);
-      getDetails(e.target.dataset.apiId);
+      getId('modal-title').innerHTML = '<img src="images/loading_32x32.gif alt="loading">';
+      getId('modal-address').innerHTML = '';
+      getId('modal-phone').innerHTML = '';
+      getId('modal-website').innerHTML = '';
+      
+      getDetails(e.target.dataset.apiId, (err, data) => {
+        if (err) {
+          makeDetailsView('error getting details');
+        }
+        makeDetailsView(data);
+      });
     }
   });
 
   // Called by 'click' listener
-  let makeDetailsView = (details, callback) => {
-    let docFragment = document.createDocumentFragment();
-
-    let user = document.createElement('div');
-    user.classList.add('detailsName');
-    user.innerHTML = details.data.user.full_name;
-    docFragment.appendChild(user);
-
-    let likes = document.createElement('div');
-    likes.classList.add('detailsTxt');
-    likes.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i> <span class="detailsTxt">' + details.data.likes.count + '</span>';
-    docFragment.appendChild(likes);
-
-    let location = document.createElement('div');
-    location.classList.add('detailsTxt');
-    location.innerHTML = '<i class="fa fa-map-marker" aria-hidden="true"></i> <span class="detailsTxt">' + details.data.location.name || 'not shown' + '</span>'
-    docFragment.appendChild(location);
-
-    callback(null, docFragment);
+  let makeDetailsView = (details) => {
+    getId('modal-title').innerHTML = details.result.name || '';
+    getId('modal-address').innerHTML = details.result.formatted_address || '';
+    getId('modal-phone').innerHTML = details.result.formatted_phone_number || '';
+    getId('modal-website').innerHTML = details.result.website || '';
   }
 
   //Show Picures
