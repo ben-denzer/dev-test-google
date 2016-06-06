@@ -17,7 +17,7 @@ let getPics = (lat, lon, moduleCallback) => {
     response.on('end', () => {
       let data = JSON.parse(str);
       if (data) {
-        console.log(str);
+        console.log(data);
         //moduleCallback(null, data);
       }
       else {
