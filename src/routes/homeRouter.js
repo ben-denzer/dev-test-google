@@ -1,3 +1,5 @@
+'use strict';
+
 let express = require('express');
 let homeRouter = express.Router();
 let bodyParser = require('body-parser');

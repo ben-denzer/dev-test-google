@@ -1,10 +1,12 @@
+'use strict';
+
 let https = require('https');
 let placesKey = require('../../.placesKey');
 
 let getPics = (lat, lon, moduleCallback) => {
 
   let apiCallback = (response) => {
-    str = '';
+    let str = '';
 
     response.on('error', function(err) {
       res.send('error: ' + err.message);
@@ -13,7 +15,7 @@ let getPics = (lat, lon, moduleCallback) => {
     response.on('data', (chunk) => {
       str += chunk;
     });
-    
+
     response.on('end', () => {
       if (str) {
         moduleCallback(null, str);
