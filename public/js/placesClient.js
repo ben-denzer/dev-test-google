@@ -109,7 +109,7 @@
   // Firefox has an issue that if the user presses 'not now' option
   // in the 'allow location access' prompt, then no event is fired
   let timer = setTimeout(() => {
-    getId('bigLoaderWarning').innerHTML = 'You\'ll need to choose to either Allow or Deny access to your location data. Pressing "Not Now" or not doing anything causes the page to idle forever';
-  }, 15000); 
+    loadPage('request timed out, this may be caused by the user choosing "not now" when promped for location access or from a slow connection');
+  }, 20000); 
 
 })();
